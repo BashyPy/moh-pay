@@ -5,7 +5,7 @@ export async function tryInitializeDatabase (): Promise<void> {
 try {
     await initializeDatabase();
 } catch (error: any) {
-    logger.error('MySQL Database Initializing error: %s', error.message)
+    logger.error('PostgreSQL Database Initializing error: %s', error.message)
     logger.info('Retrying in 3 seconds...')
 
     // Retry after 3 seconds

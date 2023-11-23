@@ -7,11 +7,11 @@ import { hashPassword } from "../utils/utils";
 import seedUsers from "./users";
 
 export const initializeDatabase = async (): Promise<void> => {
-  logger.info('Connecting MySQL database...')
+  logger.info('Connecting PostgreSQL database...')
 
   await AppDataSource.initialize()
     .then(async () => {
-      logger.info('MySQL Database Connection success.')
+      logger.info('PostgreSQL Database Connection success.')
 
       await seedDefaultUsers(AppDataSource)
     })

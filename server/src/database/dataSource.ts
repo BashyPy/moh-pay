@@ -4,11 +4,11 @@ import { readEnv } from '../setup/readEnv'
 
 
 const DB_HOSTNAME: string = readEnv('DB_HOST', 'localhost') as string
-const PORT: number = readEnv('DB_PORT', 3306, true) as number
-const DB_USERNAME: string = readEnv('DB_USERNAME', 'root') as string
+const PORT: number = readEnv('DB_PORT', 5432, true) as number
+const DB_USERNAME: string = readEnv('DB_USERNAME', 'postgres') as string
 const DB_PASSWORD: string = readEnv('DB_PASSWORD', '') as string
-const DB_DATABASE: string = readEnv('DB_DATABASE', 'test_ecommerce') as string
-const DB_DATABASE_TYPE: string = readEnv('DB_DATABASE_TYPE', 'mysql') as string
+const DB_DATABASE: string = readEnv('DB_DATABASE', 'test_commerce') as string
+const DB_DATABASE_TYPE: string = readEnv('DB_DATABASE_TYPE', 'postgres') as string
 
 export const AppDataSource = new DataSource({
   type: <'mysql' | 'postgres'>DB_DATABASE_TYPE, //One of both dbs may be used
